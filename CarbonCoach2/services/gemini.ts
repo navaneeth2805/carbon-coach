@@ -80,7 +80,7 @@ export async function detectMealGemini(imageUri: string): Promise<DetectorResult
 
     for (const model of candidateModels) {
       const modelController = new AbortController();
-      const modelTimeoutId = setTimeout(() => modelController.abort(), 6000); // 6s per attempt
+      const modelTimeoutId = setTimeout(() => modelController.abort(), 15000); // 15s per attempt
 
       try {
         const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
@@ -119,17 +119,25 @@ export async function detectMealGemini(imageUri: string): Promise<DetectorResult
     }
 
     if (!rawText) {
+      const errMsg =
+        lastStatus > 0
+          ? `Gemini API returned HTTP status ${lastStatus}`
+          : 'Gemini request timed out or network connection interrupted';
       return {
         status: 'error',
         source: 'gemini',
         code: 'NETWORK_ERROR',
-        message: `Gemini API returned HTTP status ${lastStatus || 404}`,
+        message: errMsg,
         latencyMs: Date.now() - startTime,
       };
     }
 
-    // Parse returned JSON safely
-    const parsed = JSON.parse(rawText);
+    // Parse returned JSON safely (strip markdown fences if present)
+    const cleanedText = rawText
+      .replace(/```json/gi, '')
+      .replace(/```/g, '')
+      .trim();
+    const parsed = JSON.parse(cleanedText);
     const dishName = parsed.dishName || 'Assorted Meal';
     const confidence = typeof parsed.confidence === 'number' ? parsed.confidence : 0.88;
     const estimatedPortionGrams =

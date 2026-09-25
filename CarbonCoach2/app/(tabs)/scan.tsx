@@ -49,11 +49,12 @@ export default function ScanScreen() {
     try {
       if (cameraRef.current) {
         const photo = await cameraRef.current.takePictureAsync({
-          quality: 0.8,
+          quality: 0.5,
+          base64: true,
           skipProcessing: false,
         });
         if (photo?.uri) {
-          processImage(photo.uri);
+          processImage(photo.uri, photo.base64);
         }
       }
     } catch (err) {
@@ -65,14 +66,15 @@ export default function ScanScreen() {
   const handlePickFromGallery = async () => {
     try {
       const result = await ImagePicker.launchImageLibraryAsync({
-        mediaTypes: ImagePicker.MediaTypeOptions.Images,
+        mediaTypes: ['images'],
         allowsEditing: true,
         aspect: [4, 3],
-        quality: 0.8,
+        quality: 0.5,
+        base64: true,
       });
 
       if (!result.canceled && result.assets?.[0]?.uri) {
-        processImage(result.assets[0].uri);
+        processImage(result.assets[0].uri, result.assets[0].base64);
       }
     } catch (err) {
       console.warn('Image picker error:', err);
@@ -80,12 +82,13 @@ export default function ScanScreen() {
   };
 
   // Step 2: Process Image with Dual Detection Fusion
-  const processImage = async (uri: string) => {
+  const processImage = async (uri: string, base64Data?: string | null) => {
     setCapturedImageUri(uri);
     setStep('detecting');
 
     try {
-      const fused = await runDetectionFusion(uri);
+      const input = base64Data ? `data:image/jpeg;base64,${base64Data}` : uri;
+      const fused = await runDetectionFusion(input);
       setFusionResult(fused);
 
       if (fused.status === 'both_failed') {

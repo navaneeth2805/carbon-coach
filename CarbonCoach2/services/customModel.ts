@@ -153,7 +153,7 @@ export async function detectMealCustomModel(imageUri: string): Promise<DetectorR
         status: 'error',
         source: 'custom_model',
         code: 'TIMEOUT',
-        message: 'Custom model request timed out (10s threshold)',
+        message: `Custom model request timed out (${Math.round(TIMEOUT_MS / 1000)}s threshold)`,
         latencyMs: Date.now() - startTime,
       };
     }
