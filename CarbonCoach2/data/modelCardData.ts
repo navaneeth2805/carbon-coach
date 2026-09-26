@@ -49,7 +49,7 @@ export const DUAL_MODEL_CARD: {
     },
   },
   customFastAPI: {
-    name: 'CarbonIQ-ResNet50 / ConvNeXt Custom Classifier',
+    name: 'CarbonCoach-ResNet50 / ConvNeXt Custom Classifier',
     architecture: 'ConvNeXt-Tiny + Custom Linear Head fine-tuned on PyTorch',
     version: 'v0.4.2-hackathon-release',
     datasetName: 'IndianFood-10K + Synthetic Augmentation & OWID decomposition tags',

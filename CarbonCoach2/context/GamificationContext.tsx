@@ -40,7 +40,7 @@ const ALL_BADGES: Omit<Badge, 'unlockedAt'>[] = [
   {
     id: 'first_scan',
     title: 'First Footprint',
-    description: 'Scanned and analyzed your very first meal with CarbonIQ.',
+    description: 'Scanned and analyzed your very first meal with CarbonCoach.',
     icon: 'sparkles',
   },
   {

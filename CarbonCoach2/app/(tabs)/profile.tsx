@@ -350,7 +350,7 @@ export default function ProfileScreen() {
                   <Text style={styles.modelHeaderTitle}>Dual-Detector Architecture</Text>
                 </View>
                 <Text style={styles.modelHeaderDesc}>
-                  CarbonIQ combines a cloud Multimodal Foundation model (Gemini 2.5 Flash) with an on-premise hosted neural classifier via parallel consensus fusion.
+                  CarbonCoach combines a cloud Multimodal Foundation model (Gemini Vision) with an on-premise hosted neural classifier via parallel consensus fusion.
                 </Text>
               </GlassCard>
 

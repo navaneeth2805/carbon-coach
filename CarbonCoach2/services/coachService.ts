@@ -20,9 +20,9 @@ function generateOfflineCoachResponse(userQuery: string, recentMeal: LoggedMeal 
 
   if (!recentMeal) {
     if (queryLower.includes('how') || queryLower.includes('tip') || queryLower.includes('start')) {
-      return "Welcome to CarbonIQ! To get started on cutting your dietary carbon footprint, focus on reducing ruminant meats (mutton, lamb, beef) and dairy concentrates (butter, ghee, heavy cream). Replacing them with lentils, legumes, or vegetables produces 70-90% lower CO₂e emissions. Scan your first meal to get tailored coaching!";
+      return "Welcome to CarbonCoach! To get started on cutting your dietary carbon footprint, focus on reducing ruminant meats (mutton, lamb, beef) and dairy concentrates (butter, ghee, heavy cream). Replacing them with lentils, legumes, or vegetables produces 70-90% lower CO₂e emissions. Scan your first meal to get tailored coaching!";
     }
-    return "I am your CarbonIQ Coach. Scan or log a meal and I can dissect why its carbon footprint is high or low and suggest high-impact culinary swaps!";
+    return "I am your CarbonCoach. Scan or log a meal and I can dissect why its carbon footprint is high or low and suggest high-impact culinary swaps!";
   }
 
   const topIngredient = recentMeal.breakdown?.[0];
@@ -82,7 +82,7 @@ export async function askCarbonCoach(
       mealContext = `Latest logged meal: "${recentMeal.dishName}", Total CO2e: ${recentMeal.totalCo2e} kg, Portion: ${recentMeal.portionGrams}g, Ingredients breakdown: [${breakdownSummary}].`;
     }
 
-    const systemPrompt = `You are CarbonIQ Coach, an encouraging, scientifically grounded culinary sustainability coach.
+    const systemPrompt = `You are CarbonCoach, an encouraging, scientifically grounded culinary sustainability coach.
 User Profile:
 - Diet: ${userProfile.diet}
 - Allergies: ${userProfile.allergies.join(', ') || 'None'}

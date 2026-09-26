@@ -79,7 +79,7 @@ export default function OnboardingScreen() {
             <View style={styles.badgeRow}>
               <View style={styles.logoPill}>
                 <Ionicons name="leaf" size={14} color={colors.primaryTeal} />
-                <Text style={styles.logoPillText}>CARBON IQ SETUP</Text>
+                <Text style={styles.logoPillText}>CARBON COACH SETUP</Text>
               </View>
             </View>
             <Text style={styles.title}>Personalize Your Plate</Text>
@@ -291,7 +291,7 @@ export default function OnboardingScreen() {
               <ActivityIndicator color={colors.textInverse} />
             ) : (
               <>
-                <Text style={styles.submitBtnText}>Initialize CarbonIQ</Text>
+                <Text style={styles.submitBtnText}>Initialize CarbonCoach</Text>
                 <Ionicons name="arrow-forward" size={18} color={colors.textInverse} style={styles.btnIcon} />
               </>
             )}

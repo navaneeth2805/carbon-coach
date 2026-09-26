@@ -210,7 +210,7 @@ export default function ScanScreen() {
                   </View>
                   <Text style={styles.permissionTitle}>Camera Access Disabled</Text>
                   <Text style={styles.permissionDesc}>
-                    CarbonIQ analyzes food visual features using Gemini Vision and our custom neural detector. Enable camera permissions in your device settings or select an existing photo.
+                    CarbonCoach analyzes food visual features using Gemini Vision and our custom neural detector. Enable camera permissions in your device settings or select an existing photo.
                   </Text>
                   <TouchableOpacity
                     style={styles.reqPermBtn}

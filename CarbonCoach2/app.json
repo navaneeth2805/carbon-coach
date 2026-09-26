@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "CarbonIQ",
-    "slug": "carboniq",
+    "name": "CarbonCoach",
+    "slug": "carboncoach",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "carboniq",
+    "scheme": "carboncoach",
     "userInterfaceStyle": "dark",
     "backgroundColor": "#0B0F14",
     "ios": {
@@ -38,13 +38,13 @@
       [
         "expo-camera",
         {
-          "cameraPermission": "Allow CarbonIQ to access camera to photograph and analyze meals."
+          "cameraPermission": "Allow CarbonCoach to access camera to photograph and analyze meals."
         }
       ],
       [
         "expo-image-picker",
         {
-          "photosPermission": "Allow CarbonIQ to access photos to select meal images."
+          "photosPermission": "Allow CarbonCoach to access photos to select meal images."
         }
       ]
     ],

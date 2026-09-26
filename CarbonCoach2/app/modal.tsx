@@ -14,7 +14,7 @@ export default function ModalScreen() {
     <GradientBackground>
       <SafeAreaView style={styles.safeArea}>
         <View style={styles.header}>
-          <Text style={styles.title}>About CarbonIQ</Text>
+          <Text style={styles.title}>About CarbonCoach</Text>
           <TouchableOpacity onPress={() => router.back()} style={styles.closeBtn}>
             <Ionicons name="close" size={24} color={colors.textPrimary} />
           </TouchableOpacity>
@@ -27,7 +27,7 @@ export default function ModalScreen() {
             </View>
             <Text style={styles.cardTitle}>Real-World Food Footprints</Text>
             <Text style={styles.cardBody}>
-              Food accounts for approximately 26% of global greenhouse gas emissions. CarbonIQ bridges the gap between nutrition and climate impact by estimating the embedded CO₂e of your meal plates using computer vision and peer-reviewed agricultural life-cycle analysis.
+              Food accounts for approximately 26% of global greenhouse gas emissions. CarbonCoach bridges the gap between nutrition and climate impact by estimating the embedded CO₂e of your meal plates using computer vision and peer-reviewed agricultural life-cycle analysis.
             </Text>
           </GlassCard>
 

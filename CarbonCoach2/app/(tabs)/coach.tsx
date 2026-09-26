@@ -39,7 +39,7 @@ export default function CoachScreen() {
     // Initial welcome message
     const welcomeText = recentMeal
       ? `Hello! I noticed your recent meal was "${recentMeal.dishName}" (${recentMeal.totalCo2e} kg CO₂e). Ask me why its emissions were high or low, or how to swap ingredients to save carbon!`
-      : `Hello! I'm your CarbonIQ Coach. Scan or log a meal and I'll analyze the ingredients and help you discover climate-friendly substitutions. What would you like to explore today?`;
+      : `Hello! I'm your CarbonCoach. Scan or log a meal and I'll analyze the ingredients and help you discover climate-friendly substitutions. What would you like to explore today?`;
 
     setMessages([
       {
@@ -112,7 +112,7 @@ export default function CoachScreen() {
                 <Ionicons name="sparkles" size={18} color={colors.primaryTeal} />
               </View>
               <View>
-                <Text style={styles.headerTitle}>CarbonIQ Coach</Text>
+                <Text style={styles.headerTitle}>CarbonCoach</Text>
                 <Text style={styles.headerSub}>
                   {recentMeal
                     ? `Context: ${recentMeal.dishName} (${recentMeal.totalCo2e} kg)`

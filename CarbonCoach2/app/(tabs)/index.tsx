@@ -102,7 +102,7 @@ export default function HomeScreen() {
   if (isProfileLoading && !profile.onboardingCompleted) {
     return (
       <GradientBackground>
-        <LoadingState fullscreen message="Initializing CarbonIQ..." />
+        <LoadingState fullscreen message="Initializing CarbonCoach..." />
       </GradientBackground>
     );
   }

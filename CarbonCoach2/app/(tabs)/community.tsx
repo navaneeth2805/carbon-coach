@@ -224,7 +224,7 @@ export default function CommunityScreen() {
                     </TouchableOpacity>
                     <View style={styles.communityVerifiedRow}>
                       <Ionicons name="shield-checkmark-outline" size={14} color={colors.textMuted} />
-                      <Text style={styles.verifiedText}>Verified by CarbonIQ</Text>
+                      <Text style={styles.verifiedText}>Verified by CarbonCoach</Text>
                     </View>
                   </View>
                 </GlassCard>

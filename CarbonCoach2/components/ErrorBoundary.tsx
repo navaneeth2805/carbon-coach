@@ -46,7 +46,7 @@ export class ErrorBoundary extends Component<Props, State> {
                 <Ionicons name="shield-half-outline" size={44} color={colors.primaryTeal} />
               </View>
 
-              <Text style={styles.title}>CarbonIQ Encountered an Issue</Text>
+              <Text style={styles.title}>CarbonCoach Encountered an Issue</Text>
               <Text style={styles.subtitle}>
                 An unexpected interface error occurred. Don't worry, your logged meals and streak data are safe.
               </Text>
